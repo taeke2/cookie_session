@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class QuizController {
 	@RequestMapping("quiz")
-	public String quiz(@CookieValue(value = "myCookie", required = false) Cookie cook, Model model, HttpSession session) {
+	public String quiz(@CookieValue(value = "myCookie", required = false) Cookie cook, Model model) {
 		if(cook != null)
 			model.addAttribute("cook",cook.getName());
 		return "quiz/login";
